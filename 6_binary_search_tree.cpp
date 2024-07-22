@@ -3,12 +3,6 @@
 #include <functional>
 
 // node of binary search tree
-enum class LRChild
-{
-    LEFT,
-    RIGHT,
-    ROOT
-};
 
 class Node
 {
@@ -41,7 +35,6 @@ public:
 
 
         Node *current = root;
-        LRChild current_is = LRChild::ROOT;
         while (true) {
             if (data == current->data) {
                 Node *del_node;
@@ -85,7 +78,6 @@ public:
                     return;
                 }
                 current = current->left;
-                current_is = LRChild::LEFT;
             }
             else { // data > current->data
                 if (current->right == NULL)
@@ -95,7 +87,6 @@ public:
                     return;
                 }
                 current = current->right;
-                current_is = LRChild::RIGHT;
             }
         }
     }
